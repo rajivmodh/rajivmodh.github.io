@@ -3,313 +3,243 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rajiv Modh | Engineering Manager</title>
+<title>Rajivkumar G Modh | Engineering Leader</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --bg:#0b1020;
   --card:rgba(255,255,255,0.06);
-  --text:#e8eefc;
-  --muted:#a9b4cc;
-  --accent:#4da3ff;
-  --accent2:#7c5cff;
-  --good:#2ee59d;
+  --text:#eaf0ff;
+  --muted:#9fb0d0;
+  --accent:#5eead4;
+  --accent2:#60a5fa;
+  --danger:#fb7185;
 }
 
 [data-theme="light"]{
-  --bg:#f5f7fb;
+  --bg:#f5f7ff;
   --card:rgba(0,0,0,0.05);
-  --text:#0d1b2a;
-  --muted:#415a77;
+  --text:#0f172a;
+  --muted:#475569;
 }
 
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
 body{
-  margin:0;
-  font-family: Inter, system-ui;
   background:var(--bg);
   color:var(--text);
+  overflow-x:hidden;
+  transition:0.3s;
 }
 
-/* Layout density fix */
-section{
-  padding:60px 10%;
-}
+/* layout */
+.container{max-width:1200px;margin:auto;padding:40px}
 
-/* Header */
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 10%;
-  position:sticky;
-  top:0;
-  backdrop-filter: blur(12px);
-  background:rgba(0,0,0,0.25);
-  z-index:10;
-}
-
-.title{
-  font-weight:700;
-}
-
-.btn{
-  padding:10px 14px;
-  border-radius:10px;
-  border:1px solid var(--card);
-  background:var(--card);
-  color:var(--text);
-  cursor:pointer;
-}
-
-/* HERO */
-.hero{
-  display:grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap:30px;
-  align-items:center;
-}
-
-.hero h1{
-  font-size:46px;
-  margin:0;
-}
-
-.badge{
-  display:inline-block;
-  padding:6px 10px;
-  background:rgba(77,163,255,0.15);
-  border:1px solid rgba(77,163,255,0.3);
-  border-radius:20px;
-  font-size:12px;
-}
-
+/* glass card */
 .card{
   background:var(--card);
+  backdrop-filter:blur(14px);
   border:1px solid rgba(255,255,255,0.08);
-  border-radius:16px;
-  padding:18px;
-  backdrop-filter: blur(14px);
+  border-radius:18px;
+  padding:24px;
+  margin:16px 0;
 }
 
-/* METRICS */
-.metrics{
+/* hero */
+.hero{
+  padding:60px 0;
+}
+.hero h1{
+  font-size:48px;
+  font-weight:800;
+}
+.hero p{color:var(--muted);margin-top:10px}
+
+/* metrics */
+.grid{
   display:grid;
-  grid-template-columns: repeat(4,1fr);
-  gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
 }
 
 .metric{
-  padding:18px;
-  border-radius:14px;
-  background:var(--card);
-}
-
-.metric h2{
-  margin:0;
-  font-size:26px;
-  color:var(--accent);
-}
-
-/* EXPERIENCE */
-.exp{
-  display:grid;
-  gap:14px;
-}
-
-.role{
-  padding:16px;
-  border-radius:14px;
-  background:var(--card);
-}
-
-.role h3{margin:0;}
-.role small{color:var(--muted);}
-
-/* ARCHITECTURE */
-svg{
-  width:100%;
-}
-
-/* recruiter hook */
-.hook{
-  background:linear-gradient(135deg, rgba(77,163,255,0.15), rgba(124,92,255,0.15));
-  border:1px solid rgba(255,255,255,0.1);
   padding:20px;
   border-radius:16px;
+  background:linear-gradient(135deg, rgba(94,234,212,0.1), rgba(96,165,250,0.1));
 }
 
+.metric h2{font-size:28px}
+.metric span{color:var(--muted);font-size:13px}
+
 /* buttons */
-a.btnlink{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 14px;
+.btn{
+  padding:10px 16px;
   border-radius:10px;
-  background:var(--accent);
-  color:white;
-  text-decoration:none;
+  border:1px solid rgba(255,255,255,0.2);
+  background:transparent;
+  color:var(--text);
+  cursor:pointer;
+  margin-right:10px;
+}
+
+.btn:hover{border-color:var(--accent)}
+
+/* architecture svg */
+svg{width:100%;height:auto}
+
+/* toggle */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <div class="title">Rajiv Modh — Engineering Manager</div>
-  <div>
-    <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
-    <button class="btn" onclick="window.print()">Download PDF</button>
-  </div>
+<div class="container">
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <h3>Engineering Portfolio</h3>
+  <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div>
-    <span class="badge">AdTech • Healthcare • IAM • Distributed Systems</span>
-    <h1>Engineering Manager building high-scale revenue & secure healthcare systems</h1>
-    <p style="color:var(--muted)">
-      19+ years in Java, microservices, GCP/AWS, leading teams delivering 20M+ event-scale systems.
-    </p>
+<section class="hero card">
+  <h1>Rajivkumar G Modh</h1>
+  <p>Engineering Manager | AdTech • Retail Media • Healthcare Systems</p>
+  <p style="margin-top:10px;color:var(--muted)">
+    Distributed systems leader specializing in high-scale event-driven architectures on GCP & AWS.
+  </p>
 
-    <div class="hook">
-      <b>FAANG EM positioning:</b><br/>
-      Built AdTech revenue systems + regulated healthcare IAM platforms with strict security, scalability, and reliability constraints.
+  <div style="margin-top:20px">
+    <button class="btn">Download ATS Resume</button>
+    <button class="btn">System Design Case Studies</button>
+  </div>
+</section>
+
+<!-- LIVE METRICS -->
+<section class="card">
+  <h2>Live System Metrics (Simulated)</h2>
+  <div class="grid" style="margin-top:16px">
+
+    <div class="metric">
+      <h2 id="events">20M</h2>
+      <span>Monthly Ad Events Processed</span>
     </div>
+
+    <div class="metric">
+      <h2 id="latency">42ms</h2>
+      <span>P95 API Latency</span>
+    </div>
+
+    <div class="metric">
+      <h2 id="uptime">99.98%</h2>
+      <span>System Availability</span>
+    </div>
+
+    <div class="metric">
+      <h2 id="pipelines">128</h2>
+      <span>Active Microservices</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- SYSTEM DESIGN -->
+<section class="card">
+<h2>System Architecture Overview</h2>
+
+<svg viewBox="0 0 900 400">
+  <rect x="20" y="40" width="180" height="80" fill="rgba(94,234,212,0.2)" stroke="white"/>
+  <text x="40" y="85" fill="white">Ad Requests</text>
+
+  <rect x="260" y="40" width="200" height="80" fill="rgba(96,165,250,0.2)" stroke="white"/>
+  <text x="280" y="85" fill="white">API Gateway (GCP)</text>
+
+  <rect x="520" y="40" width="220" height="80" fill="rgba(94,234,212,0.2)" stroke="white"/>
+  <text x="540" y="85" fill="white">Microservices Layer</text>
+
+  <rect x="260" y="200" width="200" height="80" fill="rgba(251,113,133,0.2)" stroke="white"/>
+  <text x="280" y="245" fill="white">Pub/Sub Event Bus</text>
+
+  <rect x="520" y="200" width="220" height="80" fill="rgba(96,165,250,0.2)" stroke="white"/>
+  <text x="540" y="245" fill="white">Firestore / BigQuery</text>
+
+  <line x1="200" y1="80" x2="260" y2="80" stroke="white"/>
+  <line x1="460" y1="80" x2="520" y2="80" stroke="white"/>
+  <line x1="630" y1="120" x2="630" y2="200" stroke="white"/>
+</svg>
+
+</section>
+
+<!-- CASE STUDIES -->
+<section class="card">
+<h2>Engineering Case Studies</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <h3>Ad Bidding System (Retail Media)</h3>
+    <p>Built event-driven bidding engine processing millions of requests with real-time scoring & ranking.</p>
   </div>
 
   <div class="card">
-    <b>Quick Identity</b><br/><br/>
-    • EM / Staff-level backend leader<br/>
-    • GCP + AWS distributed systems<br/>
-    • AdTech + Healthcare IAM expert<br/>
-    • 100+ interviews (bar raiser)<br/>
+    <h3>IAM Gateway System (Healthcare)</h3>
+    <p>Secure OAuth2/SAML gateway handling role-based access across regulated healthcare systems (CIHI).</p>
   </div>
-</section>
 
-<!-- METRICS -->
-<section>
-  <h2>Live System Metrics (Production Scale)</h2>
-  <div class="metrics">
-    <div class="metric"><h2 id="m1">0</h2><small>Monthly Events</small></div>
-    <div class="metric"><h2 id="m2">0</h2><small>Ad Impressions</small></div>
-    <div class="metric"><h2 id="m3">0</h2><small>Healthcare Records</small></div>
-    <div class="metric"><h2 id="m4">0</h2><small>Engineers Led</small></div>
+  <div class="card">
+    <h3>Healthcare Data Platform</h3>
+    <p>High-compliance data platform enabling secure aggregation of sensitive medical records at scale.</p>
   </div>
-</section>
-
-<!-- ARCHITECTURE -->
-<section>
-<h2>System Architecture (Real-world)</h2>
-
-<div class="card">
-<svg viewBox="0 0 900 300">
-
-<rect x="20" y="40" width="180" height="60" fill="rgba(77,163,255,0.2)" stroke="#4da3ff"/>
-<text x="40" y="75" fill="white">Ad Traffic / Events</text>
-
-<rect x="260" y="40" width="180" height="60" fill="rgba(124,92,255,0.2)" stroke="#7c5cff"/>
-<text x="280" y="75" fill="white">GCP Pub/Sub</text>
-
-<rect x="500" y="40" width="180" height="60" fill="rgba(46,229,157,0.2)" stroke="#2ee59d"/>
-<text x="520" y="75" fill="white">Microservices</text>
-
-<rect x="740" y="40" width="140" height="60" fill="rgba(255,255,255,0.08)" stroke="white"/>
-<text x="760" y="75" fill="white">Firestore</text>
-
-<line x1="200" y1="70" x2="260" y2="70" stroke="white"/>
-<line x1="440" y1="70" x2="500" y2="70" stroke="white"/>
-<line x1="680" y1="70" x2="740" y2="70" stroke="white"/>
-
-<text x="20" y="150" fill="#a9b4cc">AdTech Pipeline (Loblaw Digital - Retail Media Platform)</text>
-<text x="20" y="200" fill="#a9b4cc">IAM Gateway + Access Management (CIHI Healthcare Systems)</text>
-
-</svg>
-</div>
-</section>
-
-<!-- EXPERIENCE -->
-<section>
-<h2>Experience</h2>
-
-<div class="exp">
-
-<div class="role">
-<h3>Loblaw Digital — Software Development Manager / Senior Developer</h3>
-<small>2022–Present | GCP | Retail Media Platform</small>
-<p>
-Built high-scale AdTech microservices handling 20M+ events/month. Led 7 engineers, owned architecture for bidding, targeting, and campaign systems.
-Designed Pub/Sub + Firestore-based event-driven systems.
-</p>
-</div>
-
-<div class="role">
-<h3>CIHI — Senior Software Engineer (Healthcare IAM)</h3>
-<small>2018–2022 | AWS + Security Systems</small>
-<p>
-Owned Access Management System (IAM gateway). Built secure authentication, authorization, and compliance-ready systems for Canadian healthcare data.
-Developed AWS POCs using Lambda, EventBridge, SQS, SNS, DynamoDB.
-</p>
-</div>
-
-<div class="role">
-<h3>eClinicalWorks — EMR/Patient Systems Engineer</h3>
-<small>2010–2018 | US Healthcare</small>
-<p>
-Built patient portal used by 500K+ users and 100K+ physicians.
-Implemented OAuth/SAML SSO, secure patient education systems, and large-scale medical data aggregation (100M+ records).
-</p>
-</div>
-
-<div class="role">
-<h3>Infostretch — Software Engineer</h3>
-<small>2007–2010</small>
-<p>
-Java/J2EE, mobile + enterprise systems, SOAP services, early distributed systems exposure.
-</p>
-</div>
 
 </div>
 </section>
 
-<!-- RECRUITER HOOK -->
-<section>
-<div class="hook">
-<h2>Why I’m a Strong FAANG Engineering Manager Candidate</h2>
-<ul>
-<li>Built <b>revenue-critical AdTech systems (20M+ scale)</b></li>
-<li>Built <b>regulated healthcare IAM systems (security-first architecture)</b></li>
-<li>Deep hands-on engineering + leadership (IC → EM transition)</li>
-<li>Experience in <b>both AWS and GCP production environments</b></li>
-<li>Strong hiring signal: 100+ interviews, bar-raiser level screening</li>
+<!-- EXPERIENCE SUMMARY -->
+<section class="card">
+<h2>Career Highlights</h2>
+
+<ul style="color:var(--muted);line-height:1.8">
+<li><b>Loblaw Digital:</b> Built GCP-based ad platform processing 20M+ monthly events</li>
+<li><b>CIHI:</b> Designed IAM + gateway systems for secure healthcare data exchange</li>
+<li><b>eClinicalWorks:</b> Scaled EMR patient portal serving 500K+ users & 100M+ records</li>
+<li><b>Infostretch:</b> Early career foundation in distributed Java + mobile systems</li>
 </ul>
-</div>
 </section>
+
+<!-- CONTACT -->
+<section class="card">
+<h2>Contact</h2>
+<p>Email: rajiv.modh@gmail.com</p>
+<p>LinkedIn: linkedin.com/in/rajivmodh</p>
+</section>
+
+</div>
 
 <script>
+
+// theme toggle
 function toggleTheme(){
-  const root = document.documentElement;
-  if(root.getAttribute("data-theme")==="light"){
-    root.removeAttribute("data-theme");
-  } else {
-    root.setAttribute("data-theme","light");
-  }
+  const t=document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute("data-theme",t==="light"?"dark":"light");
 }
 
-// animated counters
-function animate(id, target){
-  let el=document.getElementById(id);
-  let v=0;
-  let step=target/80;
-  let i=setInterval(()=>{
-    v+=step;
-    if(v>=target){v=target;clearInterval(i);}
-    el.innerText=Math.floor(v).toLocaleString();
-  },20);
-}
+// live metrics simulation
+setInterval(()=>{
+  document.getElementById("latency").innerText =
+    (35 + Math.random()*20).toFixed(0) + "ms";
+},2000);
 
-animate("m1",20000000);
-animate("m2",1000000);
-animate("m3",100000000);
-animate("m4",15);
+setInterval(()=>{
+  document.getElementById("uptime").innerText =
+    (99.95 + Math.random()*0.05).toFixed(2) + "%";
+},3000);
+
 </script>
 
 </body>
