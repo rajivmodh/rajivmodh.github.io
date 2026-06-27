@@ -3,271 +3,261 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rajivkumar G Modh | Engineering Portfolio</title>
+<title>Rajivkumar G Modh | Engineering Leader</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
 
 <style>
 :root{
   --bg:#0b1220;
-  --card:rgba(17,26,46,0.75);
-  --text:#eaf0ff;
+  --card:#111a2e;
   --muted:#9aa4b2;
+  --text:#eaf0ff;
   --accent:#4da3ff;
   --accent2:#22c55e;
   --border:rgba(255,255,255,0.08);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
 
 body{
-  background: radial-gradient(circle at top, #121c33, #0b1220);
+  background:linear-gradient(180deg,#0b1220,#0a0f1c);
   color:var(--text);
+  line-height:1.6;
 }
 
-/* HERO */
-.hero{
-  padding:80px 20px 40px;
-  max-width:1100px;
-  margin:auto;
+/* HEADER */
+.container{max-width:1100px;margin:0 auto;padding:40px 20px}
+
+.header{
+  display:flex;justify-content:space-between;flex-wrap:wrap;
+  margin-bottom:20px;
 }
 
-.name{
-  font-size:42px;
-  font-weight:700;
-}
+.name{font-size:34px;font-weight:700}
+.role{color:var(--accent);margin-top:6px}
 
-.role{
-  color:var(--accent);
-  margin-top:8px;
-}
+.meta{color:var(--muted);font-size:14px;text-align:right}
 
-.meta{
-  margin-top:10px;
-  color:var(--muted);
-  font-size:14px;
+/* BUTTONS */
+.actions{
+  display:flex;
+  gap:10px;
+  margin:15px 0 25px;
+  flex-wrap:wrap;
 }
 
 .btn{
-  margin-top:16px;
-  padding:10px 14px;
-  background:var(--accent);
-  border:none;
+  background:rgba(77,163,255,0.12);
+  border:1px solid var(--border);
+  color:#cfe6ff;
+  padding:8px 12px;
   border-radius:8px;
   cursor:pointer;
-  font-weight:600;
+  font-size:13px;
 }
 
-/* METRICS */
-.metrics{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  max-width:1100px;
-  margin:30px auto;
-  padding:0 20px;
-}
+.btn:hover{background:rgba(77,163,255,0.2)}
 
-.metric{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:16px;
-  text-align:center;
-  backdrop-filter: blur(10px);
-}
-
-.metric h2{font-size:22px;color:var(--accent)}
-.metric p{font-size:12px;color:var(--muted)}
-
-/* SECTIONS */
-.section{
-  max-width:1100px;
-  margin:30px auto;
-  padding:0 20px;
-}
-
+/* LAYOUT */
 .card{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:14px;
   padding:18px;
-  margin-top:12px;
-  backdrop-filter: blur(10px);
+  margin-bottom:18px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.6s ease;
 }
 
-.title{
-  font-size:18px;
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.section-title{
+  margin:25px 0 10px;
   font-weight:600;
-  margin-bottom:10px;
+  color:#fff;
 }
 
 /* EXPERIENCE */
-.job-title{font-weight:600}
+.job-title{font-weight:600;color:#fff}
 .job-sub{color:var(--accent);font-size:13px;margin-bottom:8px}
+
 ul{margin-left:18px;color:var(--muted);font-size:13px}
 li{margin-bottom:6px}
 
-/* CASE STUDIES */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
+.tag{
+  padding:6px 10px;
+  background:rgba(77,163,255,0.12);
+  border:1px solid var(--border);
+  border-radius:20px;
+  font-size:12px;
+  color:#cfe6ff;
 }
 
-@media(max-width:900px){
-  .metrics{grid-template-columns:repeat(2,1fr)}
-  .grid{grid-template-columns:1fr}
-}
-
-canvas{
-  width:100%;
-  margin-top:10px;
-}
-
-/* PRINT ATS */
-@media print{
-  body{background:#fff;color:#000}
-  .card,.metric{background:#fff;border:none}
-  .btn{display:none}
+/* DARK/LIGHT */
+.light{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#4b5563;
 }
 </style>
 </head>
 
 <body>
+<div class="container" id="resume">
 
-<!-- HERO -->
-<div class="hero">
-  <div class="name">Rajivkumar G Modh</div>
-  <div class="role">Engineering Leader | Backend Systems | 17+ Years Experience</div>
-  <div class="meta">
-    Kitchener, ON • +1 (647) 667-1505 • rajiv.modh@gmail.com
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="name">Rajivkumar G Modh</div>
+    <div class="role">Engineering Manager | Backend Systems (AdTech + Healthcare)</div>
+
+    <div class="tags">
+      <div class="tag">Distributed Systems</div>
+      <div class="tag">AdTech / Retail Media</div>
+      <div class="tag">Healthcare IAM</div>
+      <div class="tag">GCP + AWS</div>
+      <div class="tag">Java / Spring Boot</div>
+      <div class="tag">Team Leadership</div>
+    </div>
   </div>
 
-  <button class="btn" onclick="window.print()">Download ATS PDF</button>
+  <div class="meta">
+    Kitchener, Ontario<br/>
+    +1 (647) 667-1505<br/>
+    rajiv.modh@gmail.com<br/>
+    <a href="https://www.linkedin.com/in/rajivmodh" style="color:var(--accent)">LinkedIn</a>
+  </div>
 </div>
 
-<!-- LIVE METRICS -->
-<div class="metrics">
-  <div class="metric"><h2 id="m1">0</h2><p>Monthly Ad Events</p></div>
-  <div class="metric"><h2 id="m2">0</h2><p>Peak System Throughput</p></div>
-  <div class="metric"><h2 id="m3">0</h2><p>Engineers Led</p></div>
-  <div class="metric"><h2 id="m4">0</h2><p>Systems Delivered</p></div>
+<!-- ACTIONS -->
+<div class="actions">
+  <button class="btn" onclick="downloadPDF()">Download PDF Resume</button>
+  <button class="btn" onclick="downloadJSON()">Export JSON</button>
+  <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
+</div>
+
+<!-- SUMMARY -->
+<div class="card">
+  <b>Summary</b><br/><br/>
+  Engineering leader with 17+ years building high-scale backend systems in AdTech, Retail Media, and Healthcare IAM platforms.
+  Focus on secure distributed systems, event-driven architectures, and high-performing engineering teams.
 </div>
 
 <!-- EXPERIENCE -->
-<div class="section">
-
-<div class="title">Experience</div>
+<div class="section-title">Experience</div>
 
 <div class="card">
-  <div class="job-title">Loblaw Digital</div>
+  <div class="job-title">Loblaw Digital — Senior Developer / Engineering Manager</div>
   <div class="job-sub">2022 – Present | Retail Media / AdTech | GCP</div>
   <ul>
-    <li>Built microservices powering retail media ad serving systems</li>
-    <li>Designed event pipelines using Pub/Sub + Firestore</li>
-    <li>Cloud Functions for event-driven automation</li>
-    <li>Led 7 engineers, hiring (100+ interviews), sprint planning</li>
+    <li>Built backend microservices powering ad campaign serving & targeting systems</li>
+    <li>Processed 20M+ monthly ad events with real-time Pub/Sub pipelines</li>
+    <li>Designed Firestore + Cloud Functions event-driven architecture</li>
+    <li>Improved system reliability and reduced regression effort by ~20%</li>
+    <li>Led team of 7 engineers (hiring, mentoring, performance reviews, promotions)</li>
   </ul>
 </div>
 
 <div class="card">
-  <div class="job-title">CIHI</div>
-  <div class="job-sub">2018 – 2022 | Healthcare | IAM / Security</div>
+  <div class="job-title">CIHI — Senior Software Engineer</div>
+  <div class="job-sub">2018 – 2022 | Healthcare IAM / Security Systems</div>
   <ul>
-    <li>Owned enterprise Access Management System (IAM gateway)</li>
-    <li>Built secure authorization microservices</li>
-    <li>AWS POCs: Lambda, SNS, SQS, EventBridge</li>
-    <li>Delivered IRRS data sharing + automation systems</li>
+    <li>Owned Access Management System used as enterprise authentication gateway</li>
+    <li>Built secure authorization services for healthcare data access flows</li>
+    <li>Developed AWS POCs using Lambda, SNS, SQS, EventBridge, DynamoDB</li>
+    <li>Delivered IRRS data sharing + rule automation systems</li>
+    <li>Mentored engineers and led internal cloud training programs</li>
   </ul>
 </div>
 
 <div class="card">
-  <div class="job-title">eClinicalWorks</div>
-  <div class="job-sub">2010 – 2018 | US Healthcare EMR</div>
+  <div class="job-title">eClinicalWorks — Software Engineer</div>
+  <div class="job-sub">2010 – 2018 | US Healthcare EMR Systems</div>
   <ul>
-    <li>Patient portal serving 500K+ users</li>
-    <li>OAuth2 + SAML SSO systems (SP + IDP)</li>
-    <li>Systems handling 100M+ healthcare records</li>
-    <li>Spring Security + enterprise backend architecture</li>
+    <li>Built Patient Portal used by 500K+ users and 100K+ physicians</li>
+    <li>Designed OAuth2 + SAML SSO identity and authorization systems</li>
+    <li>Handled 100M+ medical records across distributed backend systems</li>
+    <li>Led backend team and delivered Spring Security based enhancements</li>
   </ul>
 </div>
 
+<div class="card">
+  <div class="job-title">Infostretch (Apexon) — Software Engineer</div>
+  <div class="job-sub">2007 – 2010</div>
+  <ul>
+    <li>Built enterprise Java/J2EE + SOAP-based backend systems</li>
+    <li>Developed early mobile applications (J2ME / Android)</li>
+    <li>Delivered XML-based integration services and web modules</li>
+  </ul>
 </div>
 
-<!-- CASE STUDIES -->
-<div class="section">
-<div class="title">System Case Studies</div>
-
-<div class="grid">
+<!-- PROJECT -->
+<div class="section-title">Projects</div>
 
 <div class="card">
-  <div class="title">Ad Bidding System</div>
-  <p style="color:var(--muted);font-size:13px">
-    Real-time event pipeline processing millions of ad requests with low latency decisioning.
+  <b>LilacShop (E-commerce)</b><br/>
+  <a href="https://www.lilacshop.ca/" style="color:var(--accent)">https://www.lilacshop.ca/</a>
+  <p style="color:var(--muted);font-size:13px;margin-top:8px">
+    Side project demonstrating frontend + backend integration, product catalog system, and deployment workflow.
   </p>
-  <canvas id="c1"></canvas>
 </div>
+
+<!-- EDUCATION -->
+<div class="section-title">Education</div>
 
 <div class="card">
-  <div class="title">IAM Gateway</div>
-  <p style="color:var(--muted);font-size:13px">
-    Secure authentication gateway supporting OAuth2, SAML, and role-based access control.
-  </p>
-  <canvas id="c2"></canvas>
+  MCA — Gujarat University (2007)<br/>
+  B.Com — Gujarat University (2004)
 </div>
 
-<div class="card">
-  <div class="title">Healthcare Data Platform</div>
-  <p style="color:var(--muted);font-size:13px">
-    Large-scale medical record aggregation with audit-safe access and compliance controls.
-  </p>
-  <canvas id="c3"></canvas>
-</div>
-
-</div>
 </div>
 
 <script>
-
-/* ===== METRICS ANIMATION ===== */
-const animate = (id, target, speed=40)=>{
-  let el = document.getElementById(id);
-  let i = 0;
-  let step = Math.ceil(target/50);
-  let interval = setInterval(()=>{
-    i += step;
-    if(i>=target){i=target; clearInterval(interval);}
-    el.innerText = i.toLocaleString();
-  }, speed);
-};
-
-animate("m1", 20000000);
-animate("m2", 500000);
-animate("m3", 7);
-animate("m4", 25);
-
-/* ===== SIMPLE CASE STUDY CHARTS ===== */
-function drawBar(canvasId, data){
-  const c = document.getElementById(canvasId);
-  const ctx = c.getContext("2d");
-  c.width = 300; c.height = 150;
-
-  const w = c.width;
-  const h = c.height;
-  const barW = 50;
-
-  data.forEach((v,i)=>{
-    ctx.fillStyle = "#4da3ff";
-    ctx.fillRect(i*80+30, h-v, barW, v);
+// Scroll animation
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
   });
+},{threshold:0.1});
+
+cards.forEach(c=>observer.observe(c));
+
+// PDF export
+function downloadPDF(){
+  const element = document.getElementById('resume');
+  html2pdf().from(element).save('Rajiv_Modh_Resume.pdf');
 }
 
-/* Fake system signals */
-drawBar("c1",[80,120,60]);
-drawBar("c2",[100,90,70]);
-drawBar("c3",[60,110,90]);
+// JSON export
+function downloadJSON(){
+  const data = {
+    name:"Rajivkumar G Modh",
+    experience:"Loblaw Digital, CIHI, eClinicalWorks, Infostretch",
+    skills:["Java","Spring","GCP","AWS","AdTech","Healthcare IAM"]
+  };
+  const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = "resume.json";
+  a.click();
+}
 
+// Theme toggle
+function toggleTheme(){
+  document.body.classList.toggle('light');
+}
 </script>
 
 </body>
