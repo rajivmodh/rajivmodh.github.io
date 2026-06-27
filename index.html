@@ -3,149 +3,184 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rajivkumar G Modh - Engineering Manager</title>
+<title>Rajivkumar G Modh | Engineering Manager</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg1:#070A12;
-  --bg2:#0B1020;
-  --card: rgba(255,255,255,0.06);
-  --border: rgba(255,255,255,0.10);
-  --text:#EAF0FF;
-  --muted:#9AA4B2;
-  --accent:#5EEAD4;
-  --accent2:#60A5FA;
+  --bg:#0b0f19;
+  --panel:rgba(255,255,255,0.06);
+  --border:rgba(255,255,255,0.10);
+  --text:#eaf0ff;
+  --muted:#9aa4b2;
+  --accent:#7c5cff;
+  --accent2:#22d3ee;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family:Inter;
-  color:var(--text);
+  font-family:Inter, sans-serif;
   background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.15), transparent),
-    radial-gradient(1000px 500px at 90% 20%, rgba(94,234,212,0.12), transparent),
-    linear-gradient(180deg,var(--bg1),var(--bg2));
-  min-height:100vh;
+    radial-gradient(900px 500px at 20% 10%, rgba(124,92,255,0.25), transparent),
+    radial-gradient(900px 500px at 80% 20%, rgba(34,211,238,0.18), transparent),
+    var(--bg);
+  color:var(--text);
 }
 
 /* NAV */
 nav{
   position:fixed;
-  top:18px;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(255,255,255,0.05);
-  border:1px solid var(--border);
+  top:0;
+  width:100%;
+  background:rgba(10,12,20,0.6);
   backdrop-filter: blur(14px);
-  padding:10px 18px;
-  border-radius:999px;
-  z-index:10;
+  border-bottom:1px solid var(--border);
+  padding:10px 0;
+  z-index:1000;
 }
 
-nav ul{display:flex;gap:18px;list-style:none}
-
-nav a{
-  color:var(--muted);
+.nav-inner{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  padding:0 18px;
   font-size:13px;
-  text-decoration:none;
+  color:var(--muted);
 }
 
 /* HERO */
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:0 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:90px 18px 30px;
 }
 
 .hero h1{
-  font-size:54px;
-  letter-spacing:-1px;
-  background:linear-gradient(90deg,var(--accent2),var(--accent));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  font-size:42px;
+  letter-spacing:-0.8px;
+  font-weight:700;
 }
 
 .hero p{
-  max-width:780px;
-  margin-top:18px;
+  margin-top:10px;
   color:var(--muted);
-  font-size:16px;
-  line-height:1.6;
+  max-width:900px;
+  line-height:1.5;
 }
 
-/* SECTION WRAPPER */
+/* METRICS */
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.metric{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+}
+
+.metric b{
+  font-size:16px;
+  display:block;
+}
+
+.metric span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* SECTIONS */
 section{
   max-width:1100px;
   margin:auto;
-  padding:90px 20px;
+  padding:28px 18px;
 }
 
 h2{
-  font-size:26px;
-  margin-bottom:20px;
-  letter-spacing:-0.3px;
-}
-
-/* CARD */
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  backdrop-filter: blur(16px);
-  border-radius:18px;
-  padding:20px;
-  transition:0.3s ease;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(94,234,212,0.35);
+  font-size:14px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#c7d2fe;
+  margin-bottom:12px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:12px;
 }
 
-/* METRICS */
-.metric{
-  font-size:28px;
-  font-weight:700;
-  background:linear-gradient(90deg,var(--accent2),var(--accent));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.small{color:var(--muted);font-size:13px;margin-top:6px}
-
-/* TAGS */
-.tag{
-  display:inline-block;
-  padding:4px 10px;
-  font-size:12px;
-  border-radius:999px;
+/* CARD */
+.card{
+  background:var(--panel);
   border:1px solid var(--border);
-  margin:4px 4px 0 0;
-  color:var(--muted);
+  border-radius:14px;
+  padding:14px;
 }
 
-/* HERO BADGE */
+.card h3{
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.small{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.4;
+}
+
 .badge{
   display:inline-block;
-  padding:6px 12px;
+  font-size:11px;
+  padding:3px 8px;
   border-radius:999px;
-  background:rgba(94,234,212,0.08);
-  border:1px solid rgba(94,234,212,0.2);
-  color:var(--accent);
+  background:rgba(124,92,255,0.15);
+  border:1px solid rgba(124,92,255,0.25);
+  margin-right:6px;
+  margin-top:6px;
+}
+
+/* EXPERIENCE */
+.exp{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.exp-item{
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.04);
+}
+
+.exp-item b{
+  font-size:14px;
+}
+
+.exp-item p{
   font-size:12px;
-  margin-bottom:16px;
+  color:var(--muted);
+  margin-top:4px;
+  line-height:1.4;
+}
+
+/* LINKS */
+a{
+  color:var(--accent2);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
 }
 </style>
 </head>
@@ -153,88 +188,147 @@ h2{
 <body>
 
 <nav>
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="#systems">Systems</a></li>
-  <li><a href="#impact">Impact</a></li>
-</ul>
+  <div class="nav-inner">
+    <div><b>Rajivkumar G Modh</b></div>
+    <div>AdTech • Healthcare • EM • GCP</div>
+  </div>
 </nav>
 
-<section class="hero" id="home">
-  <div>
-    <div class="badge">Engineering Manager • AdTech • Retail Media • GCP</div>
-    <h1>Rajivkumar G Modh</h1>
-    <p>
-      Engineering Manager with 19+ years of experience building
-      real-time AdTech bidding systems, event-driven architectures,
-      and high-scale distributed platforms on GCP.
-    </p>
+<!-- HERO -->
+<div class="hero">
+  <h1>Engineering Manager — AdTech, Healthcare & Distributed Systems</h1>
+  <p>
+    19+ years of engineering leadership across high-scale AdTech revenue systems,
+    healthcare IAM/security platforms, and production-grade distributed systems on GCP.
+    Strong focus on reliability, latency, system design, and team execution.
+  </p>
+
+  <div class="metrics">
+    <div class="metric"><b>10M–50M+</b><span>monthly AdTech events</span></div>
+    <div class="metric"><b>IAM Systems</b><span>Healthcare identity & security</span></div>
+    <div class="metric"><b>GCP</b><span>event-driven architecture</span></div>
+    <div class="metric"><b>8+</b><span>engineers led</span></div>
+  </div>
+</div>
+
+<!-- DOMAINS -->
+<section>
+  <h2>Engineering Domains</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Revenue Systems (AdTech / Retail Media)</h3>
+      <p class="small">
+        Built real-time bidding systems, campaign optimization engines,
+        and high-throughput event pipelines on GCP Pub/Sub.
+      </p>
+      <span class="badge">Low Latency</span>
+      <span class="badge">High Scale</span>
+      <span class="badge">Event Driven</span>
+    </div>
+
+    <div class="card" style="border:1px solid rgba(34,211,238,0.25)">
+      <h3>Healthcare Systems (IAM / Security)</h3>
+      <p class="small">
+        Designed enterprise authentication and authorization systems for regulated healthcare environments
+        using OAuth2, SAML, and RBAC.
+      </p>
+      <span class="badge">OAuth2</span>
+      <span class="badge">SAML</span>
+      <span class="badge">RBAC</span>
+      <span class="badge">Secure Systems</span>
+    </div>
+
+    <div class="card">
+      <h3>Product Engineering</h3>
+      <p class="small">
+        Built and delivered production web systems and business platforms including retail websites.
+      </p>
+      <span class="badge">Full Stack</span>
+      <span class="badge">UX + Backend</span>
+    </div>
+
   </div>
 </section>
 
-<section id="about">
-  <h2>Overview</h2>
-  <div class="card">
-    Specialist in building <b>low-latency distributed systems</b> for AdTech and regulated enterprise platforms.
-    <br><br>
-    <span class="tag">Real-time Bidding</span>
-    <span class="tag">GCP Pub/Sub</span>
-    <span class="tag">IAM Systems</span>
-    <span class="tag">Distributed Architecture</span>
-    <span class="tag">High-scale Backend</span>
+<!-- IMPACT -->
+<section>
+  <h2>System Impact</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>AdTech Platform</h3>
+      <p class="small">Retail media advertising system</p>
+      <b>10M–50M+ events/month</b>
+    </div>
+
+    <div class="card">
+      <h3>Latency Sensitive Systems</h3>
+      <p class="small">Event-driven microservices</p>
+      <b>&lt;300ms p95 latency</b>
+    </div>
+
+    <div class="card">
+      <h3>Healthcare IAM Platform</h3>
+      <p class="small">Identity & access management systems</p>
+      <b>Enterprise-grade security</b>
+    </div>
+
   </div>
 </section>
 
-<section id="systems">
-<h2>Core Systems Owned</h2>
+<!-- EXPERIENCE -->
+<section>
+  <h2>Experience</h2>
 
-<div class="grid">
+  <div class="exp">
 
-<div class="card">
-<div class="metric">10M–50M+</div>
-<div class="small">monthly ad events processed in real-time pipeline</div>
-</div>
+    <div class="exp-item">
+      <b>Engineering Manager — Loblaw Digital (AdTech / GCP)</b>
+      <p>
+        Led engineering team building retail media platform.
+        Owned hiring, system design, and delivery of high-scale event-driven AdTech systems.
+      </p>
+    </div>
 
-<div class="card">
-<div class="metric"><300ms</div>
-<div class="small">p95 bidding decision latency</div>
-</div>
+    <div class="exp-item">
+      <b>Senior Engineer — CIHI (Healthcare IAM Systems)</b>
+      <p>
+        Designed secure identity and access management systems using OAuth2, SAML, and RBAC in regulated environments.
+      </p>
+    </div>
 
-<div class="card">
-<div class="metric">GCP Pub/Sub</div>
-<div class="small">event streaming backbone for AdTech system</div>
-</div>
+    <div class="exp-item">
+      <b>Senior Engineer — eClinicalWorks (Healthcare Systems)</b>
+      <p>
+        Built scalable healthcare backend systems supporting large-scale physician and patient platforms.
+      </p>
+    </div>
 
-<div class="card">
-<div class="metric">IAM Platform</div>
-<div class="small">OAuth2 / SAML / RBAC enterprise system</div>
-</div>
-
-</div>
+  </div>
 </section>
 
-<section id="impact">
-<h2>Leadership Impact</h2>
+<!-- PRODUCT / PROOF -->
+<section>
+  <h2>Product & Engineering Work</h2>
 
-<div class="grid">
+  <div class="grid">
 
-<div class="card">
-<div class="metric">8 Engineers</div>
-<div class="small">direct team leadership</div>
-</div>
+    <div class="card">
+      <h3>Retail Business Platform</h3>
+      <p class="small">Production website for retail business operations.</p>
+      <b><a href="https://www.lilacshop.ca/" target="_blank">lilacshop.ca</a></b>
+    </div>
 
-<div class="card">
-<div class="metric">100+</div>
-<div class="small">technical interviews conducted</div>
-</div>
+    <div class="card">
+      <h3>Engineering Portfolio Site</h3>
+      <p class="small">Designed and built engineering presence for technical storytelling.</p>
+      <b>Full-stack ownership</b>
+    </div>
 
-<div class="card">
-<div class="metric">Multi-workstream</div>
-<div class="small">bidding + targeting + IAM systems</div>
-</div>
-
-</div>
+  </div>
 </section>
 
 </body>
