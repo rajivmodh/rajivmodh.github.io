@@ -5,114 +5,147 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Rajivkumar G Modh - Engineering Manager</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-* { margin:0; padding:0; box-sizing:border-box; }
-
-:root {
-  --bg:#0a0a0f;
-  --card:#151520;
-  --text:#ffffff;
-  --muted:#9aa4b2;
-  --accent:#00d4ff;
-  --accent2:#4ecdc4;
+:root{
+  --bg1:#070A12;
+  --bg2:#0B1020;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.10);
+  --text:#EAF0FF;
+  --muted:#9AA4B2;
+  --accent:#5EEAD4;
+  --accent2:#60A5FA;
 }
 
-body {
-  font-family: Inter, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height:1.6;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Inter;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.15), transparent),
+    radial-gradient(1000px 500px at 90% 20%, rgba(94,234,212,0.12), transparent),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
+  min-height:100vh;
 }
 
 /* NAV */
-nav {
+nav{
   position:fixed;
-  top:20px;
+  top:18px;
   left:50%;
   transform:translateX(-50%);
-  background:rgba(20,20,30,0.8);
-  padding:12px 24px;
-  border-radius:40px;
-  backdrop-filter: blur(10px);
-  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  backdrop-filter: blur(14px);
+  padding:10px 18px;
+  border-radius:999px;
+  z-index:10;
 }
 
-nav ul {
-  display:flex;
-  gap:20px;
-  list-style:none;
-}
+nav ul{display:flex;gap:18px;list-style:none}
 
-nav a {
+nav a{
   color:var(--muted);
+  font-size:13px;
   text-decoration:none;
-  font-size:14px;
 }
 
 /* HERO */
-.hero {
+.hero{
   min-height:100vh;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
   padding:0 20px;
 }
 
-.hero h1 {
-  font-size:48px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
+.hero h1{
+  font-size:54px;
+  letter-spacing:-1px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-.hero p {
-  max-width:700px;
-  margin-top:20px;
+.hero p{
+  max-width:780px;
+  margin-top:18px;
   color:var(--muted);
+  font-size:16px;
+  line-height:1.6;
 }
 
-/* SECTIONS */
-section {
-  padding:100px 20px;
+/* SECTION WRAPPER */
+section{
   max-width:1100px;
   margin:auto;
+  padding:90px 20px;
 }
 
-h2 {
-  font-size:32px;
+h2{
+  font-size:26px;
   margin-bottom:20px;
+  letter-spacing:-0.3px;
 }
 
-/* CARDS */
-.card {
+/* CARD */
+.card{
   background:var(--card);
-  padding:24px;
-  border-radius:16px;
-  margin-top:20px;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid var(--border);
+  backdrop-filter: blur(16px);
+  border-radius:18px;
+  padding:20px;
+  transition:0.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(94,234,212,0.35);
 }
 
 /* GRID */
-.grid {
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
 }
 
 /* METRICS */
-.metric {
+.metric{
   font-size:28px;
-  color:var(--accent);
   font-weight:700;
+  background:linear-gradient(90deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.small {
+.small{color:var(--muted);font-size:13px;margin-top:6px}
+
+/* TAGS */
+.tag{
+  display:inline-block;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  margin:4px 4px 0 0;
   color:var(--muted);
-  font-size:14px;
+}
+
+/* HERO BADGE */
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(94,234,212,0.08);
+  border:1px solid rgba(94,234,212,0.2);
+  color:var(--accent);
+  font-size:12px;
+  margin-bottom:16px;
 }
 </style>
 </head>
@@ -120,105 +153,88 @@ h2 {
 <body>
 
 <nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#systems">Systems</a></li>
-    <li><a href="#impact">Impact</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#systems">Systems</a></li>
+  <li><a href="#impact">Impact</a></li>
+</ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
-  <h1>Engineering Manager</h1>
-  <p>
-    AdTech & Retail Media Systems Leader with 19+ years of experience building
-    real-time bidding systems, event-driven architectures, and high-scale
-    distributed platforms on GCP.
-  </p>
+  <div>
+    <div class="badge">Engineering Manager • AdTech • Retail Media • GCP</div>
+    <h1>Rajivkumar G Modh</h1>
+    <p>
+      Engineering Manager with 19+ years of experience building
+      real-time AdTech bidding systems, event-driven architectures,
+      and high-scale distributed platforms on GCP.
+    </p>
+  </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
-  <h2>About</h2>
+  <h2>Overview</h2>
   <div class="card">
-    Engineering Manager specializing in:
+    Specialist in building <b>low-latency distributed systems</b> for AdTech and regulated enterprise platforms.
     <br><br>
-    • Real-time AdTech (bidding, targeting, auctions)<br>
-    • Distributed event systems (GCP Pub/Sub, streaming pipelines)<br>
-    • IAM / Security systems (OAuth2, SAML, RBAC)<br>
-    • High-scale backend platforms processing millions of events
+    <span class="tag">Real-time Bidding</span>
+    <span class="tag">GCP Pub/Sub</span>
+    <span class="tag">IAM Systems</span>
+    <span class="tag">Distributed Architecture</span>
+    <span class="tag">High-scale Backend</span>
   </div>
 </section>
 
-<!-- SYSTEMS -->
 <section id="systems">
-  <h2>Systems Owned</h2>
+<h2>Core Systems Owned</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <div class="card">
-      <h3>Retail Media Ad Platform</h3>
-      <p class="small">Real-time bidding + targeting system</p>
-      <br>
-      <div class="metric">10M–50M+</div>
-      <div class="small">events/month processed</div>
-      <br>
-      <div class="metric">< 300ms</div>
-      <div class="small">p95 bidding latency</div>
-    </div>
+<div class="card">
+<div class="metric">10M–50M+</div>
+<div class="small">monthly ad events processed in real-time pipeline</div>
+</div>
 
-    <div class="card">
-      <h3>Event Streaming Pipeline</h3>
-      <p class="small">GCP Pub/Sub based ingestion system</p>
-      <br>
-      <div class="metric">High burst</div>
-      <div class="small">real-time traffic spikes</div>
-    </div>
+<div class="card">
+<div class="metric"><300ms</div>
+<div class="small">p95 bidding decision latency</div>
+</div>
 
-    <div class="card">
-      <h3>IAM / Authorization System</h3>
-      <p class="small">Enterprise healthcare security system</p>
-      <br>
-      <div class="metric">Multi-service</div>
-      <div class="small">RBAC + OAuth2 + SAML</div>
-    </div>
+<div class="card">
+<div class="metric">GCP Pub/Sub</div>
+<div class="small">event streaming backbone for AdTech system</div>
+</div>
 
-  </div>
+<div class="card">
+<div class="metric">IAM Platform</div>
+<div class="small">OAuth2 / SAML / RBAC enterprise system</div>
+</div>
+
+</div>
 </section>
 
-<!-- IMPACT -->
 <section id="impact">
-  <h2>Engineering Impact</h2>
+<h2>Leadership Impact</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <div class="card">
-      <div class="metric">8 Engineers</div>
-      <div class="small">direct team leadership</div>
-    </div>
+<div class="card">
+<div class="metric">8 Engineers</div>
+<div class="small">direct team leadership</div>
+</div>
 
-    <div class="card">
-      <div class="metric">100+</div>
-      <div class="small">technical interviews conducted</div>
-    </div>
+<div class="card">
+<div class="metric">100+</div>
+<div class="small">technical interviews conducted</div>
+</div>
 
-    <div class="card">
-      <div class="metric">Multi-system</div>
-      <div class="small">ownership across AdTech + IAM</div>
-    </div>
+<div class="card">
+<div class="metric">Multi-workstream</div>
+<div class="small">bidding + targeting + IAM systems</div>
+</div>
 
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    rajiv.modh@gmail.com<br>
-    LinkedIn: linkedin.com/in/rajivmodh
-  </div>
+</div>
 </section>
 
 </body>
