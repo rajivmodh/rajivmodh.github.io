@@ -292,7 +292,11 @@ setInterval(()=>{
   document.getElementById("uptime").innerText =
     (99.95 + Math.random()*0.05).toFixed(2) + "%";
 },3000);
-
+  
+function downloadPDF() {
+  // Switch to clean print mode
+  window.print();
+}
 </script>
 
 </body>
