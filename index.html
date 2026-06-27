@@ -3,300 +3,271 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rajivkumar G Modh | Engineering Leader</title>
+<title>Rajivkumar G Modh | Engineering Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0b1020;
-  --card:rgba(255,255,255,0.06);
+  --bg:#0b1220;
+  --card:rgba(17,26,46,0.75);
   --text:#eaf0ff;
-  --muted:#9fb0d0;
-  --accent:#5eead4;
-  --accent2:#60a5fa;
-  --danger:#fb7185;
+  --muted:#9aa4b2;
+  --accent:#4da3ff;
+  --accent2:#22c55e;
+  --border:rgba(255,255,255,0.08);
 }
 
-[data-theme="light"]{
-  --bg:#f5f7ff;
-  --card:rgba(0,0,0,0.05);
-  --text:#0f172a;
-  --muted:#475569;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
 body{
-  background:var(--bg);
+  background: radial-gradient(circle at top, #121c33, #0b1220);
   color:var(--text);
-  overflow-x:hidden;
-  transition:0.3s;
 }
 
-/* layout */
-.container{max-width:1200px;margin:auto;padding:40px}
-
-/* glass card */
-.card{
-  background:var(--card);
-  backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:18px;
-  padding:24px;
-  margin:16px 0;
-}
-
-/* hero */
+/* HERO */
 .hero{
-  padding:60px 0;
+  padding:80px 20px 40px;
+  max-width:1100px;
+  margin:auto;
 }
-.hero h1{
-  font-size:48px;
-  font-weight:800;
-}
-.hero p{color:var(--muted);margin-top:10px}
 
-/* metrics */
-.grid{
+.name{
+  font-size:42px;
+  font-weight:700;
+}
+
+.role{
+  color:var(--accent);
+  margin-top:8px;
+}
+
+.meta{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.btn{
+  margin-top:16px;
+  padding:10px 14px;
+  background:var(--accent);
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* METRICS */
+.metrics{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 20px;
 }
 
 .metric{
-  padding:20px;
-  border-radius:16px;
-  background:linear-gradient(135deg, rgba(94,234,212,0.1), rgba(96,165,250,0.1));
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  text-align:center;
+  backdrop-filter: blur(10px);
 }
 
-.metric h2{font-size:28px}
-.metric span{color:var(--muted);font-size:13px}
+.metric h2{font-size:22px;color:var(--accent)}
+.metric p{font-size:12px;color:var(--muted)}
 
-/* buttons */
-.btn{
-  padding:10px 16px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.2);
-  background:transparent;
-  color:var(--text);
-  cursor:pointer;
-  margin-right:10px;
+/* SECTIONS */
+.section{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 20px;
 }
 
-.btn:hover{border-color:var(--accent)}
-
-/* architecture svg */
-svg{width:100%;height:auto}
-
-/* toggle */
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  margin-top:12px;
+  backdrop-filter: blur(10px);
 }
-/* =========================
-   ATS PDF PRINT MODE
-========================= */
-@media print {
 
-  body {
-    background: white !important;
-    color: black !important;
-  }
+.title{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:10px;
+}
 
-  .card {
-    background: white !important;
-    border: 1px solid #ddd !important;
-    box-shadow: none !important;
-    break-inside: avoid;
-  }
+/* EXPERIENCE */
+.job-title{font-weight:600}
+.job-sub{color:var(--accent);font-size:13px;margin-bottom:8px}
+ul{margin-left:18px;color:var(--muted);font-size:13px}
+li{margin-bottom:6px}
 
-  .tag {
-    border: 1px solid #ccc !important;
-    color: #333 !important;
-    background: #f5f5f5 !important;
-  }
+/* CASE STUDIES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
 
-  a {
-    color: black !important;
-    text-decoration: none !important;
-  }
+@media(max-width:900px){
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:1fr}
+}
 
-  .header {
-    margin-bottom: 10px;
-  }
+canvas{
+  width:100%;
+  margin-top:10px;
+}
 
-  .section-title {
-    color: black !important;
-  }
-
-  .meta {
-    color: #333 !important;
-  }
-
-  /* REMOVE NON-ESSENTIAL SPACING */
-  .container {
-    padding: 20px !important;
-  }
-
-  /* Hide buttons in PDF */
-  button {
-    display: none !important;
-  }
+/* PRINT ATS */
+@media print{
+  body{background:#fff;color:#000}
+  .card,.metric{background:#fff;border:none}
+  .btn{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- HERO -->
+<div class="hero">
+  <div class="name">Rajivkumar G Modh</div>
+  <div class="role">Engineering Leader | Backend Systems | 17+ Years Experience</div>
+  <div class="meta">
+    Kitchener, ON • +1 (647) 667-1505 • rajiv.modh@gmail.com
+  </div>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <h3>Engineering Portfolio</h3>
-  <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
+  <button class="btn" onclick="window.print()">Download ATS PDF</button>
 </div>
 
-<!-- HERO -->
-<section class="hero card">
-  <h1>Rajivkumar G Modh</h1>
-  <p>Engineering Manager | AdTech • Retail Media • Healthcare Systems</p>
-  <p style="margin-top:10px;color:var(--muted)">
-    Distributed systems leader specializing in high-scale event-driven architectures on GCP & AWS.
-  </p>
-
-  <div style="margin-top:20px">
-    <button class="btn">Download ATS Resume</button>
-    <button class="btn">System Design Case Studies</button>
-  </div>
-</section>
-
 <!-- LIVE METRICS -->
-<section class="card">
-  <h2>Live System Metrics (Simulated)</h2>
-  <div class="grid" style="margin-top:16px">
+<div class="metrics">
+  <div class="metric"><h2 id="m1">0</h2><p>Monthly Ad Events</p></div>
+  <div class="metric"><h2 id="m2">0</h2><p>Peak System Throughput</p></div>
+  <div class="metric"><h2 id="m3">0</h2><p>Engineers Led</p></div>
+  <div class="metric"><h2 id="m4">0</h2><p>Systems Delivered</p></div>
+</div>
 
-    <div class="metric">
-      <h2 id="events">20M</h2>
-      <span>Monthly Ad Events Processed</span>
-    </div>
+<!-- EXPERIENCE -->
+<div class="section">
 
-    <div class="metric">
-      <h2 id="latency">42ms</h2>
-      <span>P95 API Latency</span>
-    </div>
+<div class="title">Experience</div>
 
-    <div class="metric">
-      <h2 id="uptime">99.98%</h2>
-      <span>System Availability</span>
-    </div>
+<div class="card">
+  <div class="job-title">Loblaw Digital</div>
+  <div class="job-sub">2022 – Present | Retail Media / AdTech | GCP</div>
+  <ul>
+    <li>Built microservices powering retail media ad serving systems</li>
+    <li>Designed event pipelines using Pub/Sub + Firestore</li>
+    <li>Cloud Functions for event-driven automation</li>
+    <li>Led 7 engineers, hiring (100+ interviews), sprint planning</li>
+  </ul>
+</div>
 
-    <div class="metric">
-      <h2 id="pipelines">128</h2>
-      <span>Active Microservices</span>
-    </div>
+<div class="card">
+  <div class="job-title">CIHI</div>
+  <div class="job-sub">2018 – 2022 | Healthcare | IAM / Security</div>
+  <ul>
+    <li>Owned enterprise Access Management System (IAM gateway)</li>
+    <li>Built secure authorization microservices</li>
+    <li>AWS POCs: Lambda, SNS, SQS, EventBridge</li>
+    <li>Delivered IRRS data sharing + automation systems</li>
+  </ul>
+</div>
 
-  </div>
-</section>
+<div class="card">
+  <div class="job-title">eClinicalWorks</div>
+  <div class="job-sub">2010 – 2018 | US Healthcare EMR</div>
+  <ul>
+    <li>Patient portal serving 500K+ users</li>
+    <li>OAuth2 + SAML SSO systems (SP + IDP)</li>
+    <li>Systems handling 100M+ healthcare records</li>
+    <li>Spring Security + enterprise backend architecture</li>
+  </ul>
+</div>
 
-<!-- SYSTEM DESIGN -->
-<section class="card">
-<h2>System Architecture Overview</h2>
-
-<svg viewBox="0 0 900 400">
-  <rect x="20" y="40" width="180" height="80" fill="rgba(94,234,212,0.2)" stroke="white"/>
-  <text x="40" y="85" fill="white">Ad Requests</text>
-
-  <rect x="260" y="40" width="200" height="80" fill="rgba(96,165,250,0.2)" stroke="white"/>
-  <text x="280" y="85" fill="white">API Gateway (GCP)</text>
-
-  <rect x="520" y="40" width="220" height="80" fill="rgba(94,234,212,0.2)" stroke="white"/>
-  <text x="540" y="85" fill="white">Microservices Layer</text>
-
-  <rect x="260" y="200" width="200" height="80" fill="rgba(251,113,133,0.2)" stroke="white"/>
-  <text x="280" y="245" fill="white">Pub/Sub Event Bus</text>
-
-  <rect x="520" y="200" width="220" height="80" fill="rgba(96,165,250,0.2)" stroke="white"/>
-  <text x="540" y="245" fill="white">Firestore / BigQuery</text>
-
-  <line x1="200" y1="80" x2="260" y2="80" stroke="white"/>
-  <line x1="460" y1="80" x2="520" y2="80" stroke="white"/>
-  <line x1="630" y1="120" x2="630" y2="200" stroke="white"/>
-</svg>
-
-</section>
+</div>
 
 <!-- CASE STUDIES -->
-<section class="card">
-<h2>Engineering Case Studies</h2>
+<div class="section">
+<div class="title">System Case Studies</div>
 
 <div class="grid">
 
-  <div class="card">
-    <h3>Ad Bidding System (Retail Media)</h3>
-    <p>Built event-driven bidding engine processing millions of requests with real-time scoring & ranking.</p>
-  </div>
+<div class="card">
+  <div class="title">Ad Bidding System</div>
+  <p style="color:var(--muted);font-size:13px">
+    Real-time event pipeline processing millions of ad requests with low latency decisioning.
+  </p>
+  <canvas id="c1"></canvas>
+</div>
 
-  <div class="card">
-    <h3>IAM Gateway System (Healthcare)</h3>
-    <p>Secure OAuth2/SAML gateway handling role-based access across regulated healthcare systems (CIHI).</p>
-  </div>
+<div class="card">
+  <div class="title">IAM Gateway</div>
+  <p style="color:var(--muted);font-size:13px">
+    Secure authentication gateway supporting OAuth2, SAML, and role-based access control.
+  </p>
+  <canvas id="c2"></canvas>
+</div>
 
-  <div class="card">
-    <h3>Healthcare Data Platform</h3>
-    <p>High-compliance data platform enabling secure aggregation of sensitive medical records at scale.</p>
-  </div>
+<div class="card">
+  <div class="title">Healthcare Data Platform</div>
+  <p style="color:var(--muted);font-size:13px">
+    Large-scale medical record aggregation with audit-safe access and compliance controls.
+  </p>
+  <canvas id="c3"></canvas>
+</div>
 
 </div>
-</section>
-
-<!-- EXPERIENCE SUMMARY -->
-<section class="card">
-<h2>Career Highlights</h2>
-
-<ul style="color:var(--muted);line-height:1.8">
-<li><b>Loblaw Digital:</b> Built GCP-based ad platform processing 20M+ monthly events</li>
-<li><b>CIHI:</b> Designed IAM + gateway systems for secure healthcare data exchange</li>
-<li><b>eClinicalWorks:</b> Scaled EMR patient portal serving 500K+ users & 100M+ records</li>
-<li><b>Infostretch:</b> Early career foundation in distributed Java + mobile systems</li>
-</ul>
-</section>
-
-<!-- CONTACT -->
-<section class="card">
-<h2>Contact</h2>
-<p>Email: rajiv.modh@gmail.com</p>
-<p>LinkedIn: linkedin.com/in/rajivmodh</p>
-<button class="tag" onclick="downloadPDF()" style="cursor:pointer">
-  Download ATS PDF Resume
-</button>
-</section>
-
 </div>
 
 <script>
 
-// theme toggle
-function toggleTheme(){
-  const t=document.documentElement.getAttribute("data-theme");
-  document.documentElement.setAttribute("data-theme",t==="light"?"dark":"light");
+/* ===== METRICS ANIMATION ===== */
+const animate = (id, target, speed=40)=>{
+  let el = document.getElementById(id);
+  let i = 0;
+  let step = Math.ceil(target/50);
+  let interval = setInterval(()=>{
+    i += step;
+    if(i>=target){i=target; clearInterval(interval);}
+    el.innerText = i.toLocaleString();
+  }, speed);
+};
+
+animate("m1", 20000000);
+animate("m2", 500000);
+animate("m3", 7);
+animate("m4", 25);
+
+/* ===== SIMPLE CASE STUDY CHARTS ===== */
+function drawBar(canvasId, data){
+  const c = document.getElementById(canvasId);
+  const ctx = c.getContext("2d");
+  c.width = 300; c.height = 150;
+
+  const w = c.width;
+  const h = c.height;
+  const barW = 50;
+
+  data.forEach((v,i)=>{
+    ctx.fillStyle = "#4da3ff";
+    ctx.fillRect(i*80+30, h-v, barW, v);
+  });
 }
 
-// live metrics simulation
-setInterval(()=>{
-  document.getElementById("latency").innerText =
-    (35 + Math.random()*20).toFixed(0) + "ms";
-},2000);
+/* Fake system signals */
+drawBar("c1",[80,120,60]);
+drawBar("c2",[100,90,70]);
+drawBar("c3",[60,110,90]);
 
-setInterval(()=>{
-  document.getElementById("uptime").innerText =
-    (99.95 + Math.random()*0.05).toFixed(2) + "%";
-},3000);
-  
-function downloadPDF() {
-  // Switch to clean print mode
-  window.print();
-}
 </script>
 
 </body>
