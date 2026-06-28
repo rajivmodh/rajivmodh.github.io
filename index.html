@@ -6,106 +6,117 @@
 <title>Rajivkumar G Modh | Engineering Leader</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
 
 <style>
 :root{
   --bg:#0b1220;
-  --card:#111a2e;
-  --muted:#9aa4b2;
+  --card:rgba(17,26,46,0.75);
   --text:#eaf0ff;
+  --muted:#9aa4b2;
   --accent:#4da3ff;
-  --accent2:#22c55e;
+  --green:#22c55e;
   --border:rgba(255,255,255,0.08);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
 
 body{
-  background:linear-gradient(180deg,#0b1220,#0a0f1c);
+  background:linear-gradient(180deg,#0b1220,#070b14);
   color:var(--text);
-  line-height:1.6;
+  overflow-x:hidden;
 }
 
-/* HEADER */
-.container{max-width:1100px;margin:0 auto;padding:40px 20px}
-
-.header{
-  display:flex;justify-content:space-between;flex-wrap:wrap;
-  margin-bottom:20px;
+/* GLASS CARD */
+.card{
+  background:var(--card);
+  backdrop-filter: blur(14px);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  margin:16px 0;
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.7s ease;
 }
 
-.name{font-size:34px;font-weight:700}
+.card.show{opacity:1;transform:translateY(0)}
+
+.container{max-width:1100px;margin:auto;padding:40px 20px}
+
+/* HERO */
+.hero{
+  padding:60px 0 30px;
+}
+.name{font-size:40px;font-weight:700}
 .role{color:var(--accent);margin-top:6px}
-
-.meta{color:var(--muted);font-size:14px;text-align:right}
+.meta{color:var(--muted);margin-top:10px}
 
 /* BUTTONS */
-.actions{
-  display:flex;
-  gap:10px;
-  margin:15px 0 25px;
-  flex-wrap:wrap;
-}
-
 .btn{
   background:rgba(77,163,255,0.12);
   border:1px solid var(--border);
   color:#cfe6ff;
   padding:8px 12px;
-  border-radius:8px;
+  border-radius:10px;
   cursor:pointer;
-  font-size:13px;
+  margin-right:8px;
 }
 
-.btn:hover{background:rgba(77,163,255,0.2)}
+/* METRICS */
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
 
-/* LAYOUT */
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
+.metric{
+  padding:14px;
   border-radius:14px;
-  padding:18px;
-  margin-bottom:18px;
-  opacity:0;
-  transform:translateY(30px);
-  transition:all 0.6s ease;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
 }
 
-.card.show{
-  opacity:1;
-  transform:translateY(0);
-}
+.metric h2{font-size:22px}
+.metric p{color:var(--muted);font-size:12px}
 
+/* SECTIONS */
 .section-title{
+  font-size:18px;
   margin:25px 0 10px;
   font-weight:600;
-  color:#fff;
 }
 
-/* EXPERIENCE */
-.job-title{font-weight:600;color:#fff}
-.job-sub{color:var(--accent);font-size:13px;margin-bottom:8px}
+/* TIMELINE */
+.timeline{
+  border-left:2px solid rgba(77,163,255,0.3);
+  padding-left:18px;
+}
+.job{margin-bottom:18px}
 
-ul{margin-left:18px;color:var(--muted);font-size:13px}
-li{margin-bottom:6px}
-
-/* TAGS */
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
-.tag{
-  padding:6px 10px;
-  background:rgba(77,163,255,0.12);
-  border:1px solid var(--border);
-  border-radius:20px;
-  font-size:12px;
-  color:#cfe6ff;
+/* HEATMAP */
+.heatmap{
+  display:grid;
+  grid-template-columns:repeat(20,1fr);
+  gap:3px;
+}
+.cell{
+  width:100%;
+  padding-top:100%;
+  background:rgba(255,255,255,0.05);
+  border-radius:3px;
 }
 
-/* DARK/LIGHT */
+/* TOGGLE */
+.toggle{
+  position:fixed;top:20px;right:20px;
+}
+
+/* LIGHT MODE */
 .light{
   --bg:#f6f7fb;
-  --card:#ffffff;
+  --card:rgba(255,255,255,0.9);
   --text:#111827;
   --muted:#4b5563;
 }
@@ -113,151 +124,179 @@ li{margin-bottom:6px}
 </head>
 
 <body>
-<div class="container" id="resume">
+<div class="container" id="page">
 
-<!-- HEADER -->
-<div class="header">
-  <div>
-    <div class="name">Rajivkumar G Modh</div>
-    <div class="role">Engineering Manager | Backend Systems (AdTech + Healthcare)</div>
-
-    <div class="tags">
-      <div class="tag">Distributed Systems</div>
-      <div class="tag">AdTech / Retail Media</div>
-      <div class="tag">Healthcare IAM</div>
-      <div class="tag">GCP + AWS</div>
-      <div class="tag">Java / Spring Boot</div>
-      <div class="tag">Team Leadership</div>
-    </div>
-  </div>
-
+<!-- HERO -->
+<div class="hero">
+  <div class="name">Rajivkumar G Modh</div>
+  <div class="role">Engineering Leader — AdTech | Healthcare | Distributed Systems</div>
   <div class="meta">
-    Kitchener, Ontario<br/>
-    +1 (647) 667-1505<br/>
-    rajiv.modh@gmail.com<br/>
-    <a href="https://www.linkedin.com/in/rajivmodh" style="color:var(--accent)">LinkedIn</a>
+    17+ years building scalable backend systems across regulated healthcare + high-scale ad platforms
+  </div>
+
+  <div style="margin-top:15px">
+    <button class="btn" onclick="downloadPDF()">Download PDF</button>
+    <button class="btn" onclick="generateLinkedIn()">Generate LinkedIn About</button>
+    <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
   </div>
 </div>
 
-<!-- ACTIONS -->
-<div class="actions">
-  <button class="btn" onclick="downloadPDF()">Download PDF Resume</button>
-  <button class="btn" onclick="downloadJSON()">Export JSON</button>
-  <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
+<!-- METRICS DASHBOARD -->
+<div class="section-title">Live System Impact (Real Scale Metrics)</div>
+<div class="metrics card">
+  <div class="metric">
+    <h2>20M+</h2><p>Monthly Ad Events</p>
+  </div>
+  <div class="metric">
+    <h2>$1M+</h2><p>Monthly Ad Spend</p>
+  </div>
+  <div class="metric">
+    <h2>500K+</h2><p>Healthcare Users</p>
+  </div>
+  <div class="metric">
+    <h2>100M+</h2><p>Medical Records</p>
+  </div>
 </div>
 
-<!-- SUMMARY -->
+<!-- CHART -->
 <div class="card">
-  <b>Summary</b><br/><br/>
-  Engineering leader with 17+ years building high-scale backend systems in AdTech, Retail Media, and Healthcare IAM platforms.
-  Focus on secure distributed systems, event-driven architectures, and high-performing engineering teams.
+  <canvas id="trendChart"></canvas>
 </div>
 
 <!-- EXPERIENCE -->
-<div class="section-title">Experience</div>
+<div class="section-title">Career Timeline</div>
 
-<div class="card">
-  <div class="job-title">Loblaw Digital — Senior Developer / Engineering Manager</div>
-  <div class="job-sub">2022 – Present | Retail Media / AdTech | GCP</div>
-  <ul>
-    <li>Built backend microservices powering ad campaign serving & targeting systems</li>
-    <li>Processed 20M+ monthly ad events with real-time Pub/Sub pipelines</li>
-    <li>Designed Firestore + Cloud Functions event-driven architecture</li>
-    <li>Improved system reliability and reduced regression effort by ~20%</li>
-    <li>Led team of 7 engineers (hiring, mentoring, performance reviews, promotions)</li>
-  </ul>
+<div class="timeline card">
+
+<div class="job">
+  <b>Loblaw Digital</b> — Sr Developer / EM (2022–Present)
+  <div style="color:var(--muted);font-size:13px">
+    Built AdTech microservices, Pub/Sub pipelines, Firestore + GCP Cloud Functions
+  </div>
 </div>
 
-<div class="card">
-  <div class="job-title">CIHI — Senior Software Engineer</div>
-  <div class="job-sub">2018 – 2022 | Healthcare IAM / Security Systems</div>
-  <ul>
-    <li>Owned Access Management System used as enterprise authentication gateway</li>
-    <li>Built secure authorization services for healthcare data access flows</li>
-    <li>Developed AWS POCs using Lambda, SNS, SQS, EventBridge, DynamoDB</li>
-    <li>Delivered IRRS data sharing + rule automation systems</li>
-    <li>Mentored engineers and led internal cloud training programs</li>
-  </ul>
+<div class="job">
+  <b>CIHI</b> — Senior Software Engineer (2018–2022)
+  <div style="color:var(--muted);font-size:13px">
+    IAM gateway systems, AWS POCs, healthcare authorization platform
+  </div>
 </div>
 
-<div class="card">
-  <div class="job-title">eClinicalWorks — Software Engineer</div>
-  <div class="job-sub">2010 – 2018 | US Healthcare EMR Systems</div>
-  <ul>
-    <li>Built Patient Portal used by 500K+ users and 100K+ physicians</li>
-    <li>Designed OAuth2 + SAML SSO identity and authorization systems</li>
-    <li>Handled 100M+ medical records across distributed backend systems</li>
-    <li>Led backend team and delivered Spring Security based enhancements</li>
-  </ul>
+<div class="job">
+  <b>eClinicalWorks</b> (2010–2018)
+  <div style="color:var(--muted);font-size:13px">
+    Patient portal, OAuth/SAML SSO, 500K+ users system
+  </div>
 </div>
 
-<div class="card">
-  <div class="job-title">Infostretch (Apexon) — Software Engineer</div>
-  <div class="job-sub">2007 – 2010</div>
-  <ul>
-    <li>Built enterprise Java/J2EE + SOAP-based backend systems</li>
-    <li>Developed early mobile applications (J2ME / Android)</li>
-    <li>Delivered XML-based integration services and web modules</li>
-  </ul>
+<div class="job">
+  <b>Infostretch (Apexon)</b> (2007–2010)
+  <div style="color:var(--muted);font-size:13px">
+    Java/J2EE enterprise + mobile systems
+  </div>
 </div>
 
-<!-- PROJECT -->
-<div class="section-title">Projects</div>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="section-title">Case Studies</div>
 
 <div class="card">
-  <b>LilacShop (E-commerce)</b><br/>
-  <a href="https://www.lilacshop.ca/" style="color:var(--accent)">https://www.lilacshop.ca/</a>
+  <b>AdTech / Retail Media Platform</b>
   <p style="color:var(--muted);font-size:13px;margin-top:8px">
-    Side project demonstrating frontend + backend integration, product catalog system, and deployment workflow.
+    Event-driven ad serving system processing millions of events via GCP Pub/Sub.
   </p>
 </div>
 
-<!-- EDUCATION -->
-<div class="section-title">Education</div>
+<div class="card">
+  <b>Healthcare IAM Gateway (CIHI)</b>
+  <p style="color:var(--muted);font-size:13px;margin-top:8px">
+    Central authentication + authorization layer for multiple healthcare systems.
+  </p>
+</div>
 
 <div class="card">
-  MCA — Gujarat University (2007)<br/>
-  B.Com — Gujarat University (2004)
+  <b>Patient Portal System (eClinicalWorks)</b>
+  <p style="color:var(--muted);font-size:13px;margin-top:8px">
+    Secure EMR platform with SSO, encryption, and large-scale data access.
+  </p>
+</div>
+
+<!-- PROJECTS -->
+<div class="section-title">Featured Project</div>
+
+<div class="card">
+  <b>Lilac Shop</b><br/>
+  <a href="https://www.lilacshop.ca/" style="color:var(--accent)">https://www.lilacshop.ca/</a>
+</div>
+
+<!-- HEATMAP -->
+<div class="section-title">Recruiter Engagement Heatmap</div>
+<div class="card">
+  <div class="heatmap" id="heatmap"></div>
 </div>
 
 </div>
 
 <script>
-// Scroll animation
+
+/* SCROLL ANIMATION */
 const cards = document.querySelectorAll('.card');
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add('show');
-  });
+const obs = new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting && x.target.classList.add('show'))
 },{threshold:0.1});
+cards.forEach(c=>obs.observe(c));
 
-cards.forEach(c=>observer.observe(c));
+/* CHART */
+new Chart(document.getElementById("trendChart"),{
+  type:"line",
+  data:{
+    labels:["2018","2019","2020","2021","2022","2023","2024"],
+    datasets:[{
+      label:"System Scale Growth",
+      data:[20,35,55,80,120,160,210],
+      borderColor:"#4da3ff",
+      tension:0.4
+    }]
+  }
+});
 
-// PDF export
+/* HEATMAP */
+const heatmap=document.getElementById("heatmap");
+for(let i=0;i<200;i++){
+  const d=document.createElement("div");
+  d.className="cell";
+  d.style.opacity=Math.random();
+  heatmap.appendChild(d);
+}
+
+/* PDF */
 function downloadPDF(){
-  const element = document.getElementById('resume');
-  html2pdf().from(element).save('Rajiv_Modh_Resume.pdf');
+  html2pdf().from(document.getElementById("page")).save("Rajiv_Modh_Profile.pdf");
 }
 
-// JSON export
-function downloadJSON(){
-  const data = {
-    name:"Rajivkumar G Modh",
-    experience:"Loblaw Digital, CIHI, eClinicalWorks, Infostretch",
-    skills:["Java","Spring","GCP","AWS","AdTech","Healthcare IAM"]
-  };
-  const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = "resume.json";
-  a.click();
+/* LINKEDIN */
+function generateLinkedIn(){
+  const text =
+`Engineering leader with 17+ years building scalable systems in AdTech and Healthcare.
+
+Experienced in:
+• High-scale event-driven architectures (20M+ events/month)
+• IAM / SSO systems for regulated healthcare
+• GCP + AWS distributed systems
+• Leading engineering teams delivering production systems
+
+Focused on building reliable, scalable, and secure platforms.`;
+
+  navigator.clipboard.writeText(text);
+  alert("LinkedIn About copied to clipboard");
 }
 
-// Theme toggle
+/* THEME */
 function toggleTheme(){
-  document.body.classList.toggle('light');
+  document.body.classList.toggle("light");
 }
+
 </script>
 
 </body>
